@@ -11,6 +11,8 @@ export const lightTheme = {
     corLink: 'aliceblue',
     corBotao: '#008080',
     corHoverBotao: '#184950',
+    fonteTexto: 'Arial, Helvetica, sans-serif',
+    corFooter: '#CCCCCC'
 
     
 
@@ -24,6 +26,8 @@ export const darkTheme = {
     corLink: '#00A09D',
     corBotao: '#003366',
     corHoverBotao: '#0055A4',
+    fonteTexto: 'Arial, Helvetica, sans-serif',
+    corFooter:' #CCCCCC'
 }
 
 // Criando e exportando uma const para estilizar o meu Header atraves do Styled-components
@@ -59,11 +63,10 @@ export const A = styled.a`
 // Estilizando o h1 para os titulos da minha page
 export const Titulo = styled.h1`
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: ${props => props.theme.fonteTexto};
     font-weight: 600;
     display: flex;
     justify-content: center;
-    margin-top: 18px;
     color:${props => props.theme.corTexto};
 `
 
@@ -85,7 +88,7 @@ export const BotaoCep = styled.button`
     }
 `
 
-
+// Centralizando a resposta da API
 export const InformacoesCep = styled.div`
     display: flex;
     flex-direction: column;
@@ -100,7 +103,7 @@ export const SectionCep = styled.section`
     align-items: center;
     text-align: center;
 `
-
+// Centralizando o Form
 export const SectionCepForm = styled.section`
     display: flex;
     flex-direction: column;
@@ -109,7 +112,7 @@ export const SectionCepForm = styled.section`
     text-align: center;
     gap: 5px;
 `
-/* Botão qu muda o tema */
+/* Botão que muda o tema */
 export const BotaoTheme = styled.button`
     background-color:${props => props.theme.corBotao};
     border: solid 1px black;
@@ -125,4 +128,50 @@ export const BotaoTheme = styled.button`
     &:hover{
         background-color: ${props => props.theme.corHoverBotao};
     }
+`
+// Centralizar o botao do tema
+export const DivTema = styled.div`
+    display: flex;
+    justify-content: end;
+    align-items: center;
+`
+
+// Texto
+export const Texto = styled.p`
+    color: ${props=> props.theme.corTexto};
+    font-size: 16px;
+    font-family: ${props => props.theme.fonteTexto};
+`
+
+// Section de conteudo
+export const SectionConteudo = styled.section`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    
+`
+
+// Body do html
+export const Body = styled.body`
+    margin: 0;
+    padding: 0;
+    background-color:${props => props.theme.corFundo};
+`
+
+// Footer da pagina
+export const Rodape = styled.footer`
+    background-color: ${props => props.theme.corFooter};
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`
+// Div footer
+
+export const DivFooter = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
 `

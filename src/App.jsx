@@ -10,7 +10,7 @@ import Tema from "./Paginas/Tema"
 // Importando estilos e componentes para o darkTheme e ligthTheme
 import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
-import { lightTheme,darkTheme,BotaoTheme } from './Estilos/Estilos';
+import { lightTheme,darkTheme,BotaoTheme, DivTema } from './Estilos/Estilos';
 
 function App(){
   // Armazendo o tema ligt como padrão
@@ -34,7 +34,10 @@ function App(){
             </Routes>
         </BrowserRouter> 
         {/* Botão de troca do tema*/}
-        <BotaoTheme onClick={mudarTheme}>Mudar Tema</BotaoTheme>
+
+        <DivTema>
+          <BotaoTheme onClick={mudarTheme}>Mudar Tema</BotaoTheme>
+          </DivTema>
       </ThemeProvider>
       
     </>

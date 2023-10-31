@@ -3,7 +3,7 @@ import { useState } from "react";
 // Importando o axios para consumir a API
 import axios from 'axios';
 //importando os esilos
-import { BotaoCep, InformacoesCep,SectionCep,SectionCepForm } from "../Estilos/Estilos";
+import { BotaoCep, InformacoesCep,SectionCep,SectionCepForm,Texto, } from "../Estilos/Estilos";
 
 function Cep() {
 
@@ -70,11 +70,11 @@ function Cep() {
             {
                 data.cep && (
                     <InformacoesCep>
-                            <p>CEP: {data.cep} </p>
-                            <p>Logradouro: {data.logradouro}</p>
-                            <p>Bairro: {data.bairro}</p>
-                            <p>UF: {data.uf}</p>
-                            <p>DDD: {data.ddd}</p>
+                            <Texto>CEP: {data.cep} </Texto>
+                            <Texto>Logradouro: {data.logradouro}</Texto>
+                            <Texto>Bairro: {data.bairro}</Texto>
+                            <Texto>UF: {data.uf}</Texto>
+                            <Texto>DDD: {data.ddd}</Texto>
                     </InformacoesCep>
                 )
             }
