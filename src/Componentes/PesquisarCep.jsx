@@ -3,7 +3,7 @@ import { useState } from "react";
 // Importando o axios para consumir a API
 import axios from 'axios';
 //importando os esilos
-import { BotaoCep, InformacoesCep,SectionCep } from "../Estilos/Estilos";
+import { BotaoCep, InformacoesCep,SectionCep,SectionCepForm } from "../Estilos/Estilos";
 
 function Cep() {
 
@@ -22,11 +22,11 @@ function Cep() {
     }
 
     function pesquisaCEP() {
-        //Usar o axios: manipula o get (Fazer uma requisição)
+        //Usar o axios: manipula o get 
         axios
             .get(`https://viacep.com.br/ws/${cep}/json`)
             
-            //Define uma função CALLBACK que será chamada se a requisição for bem-sucedida (similar ao try except)
+            //Define uma função CALLBACK que será chamada se a requisição for bem-sucedida 
             .then(
                 function(response){
                     if(response.data && !response.data.error) {
@@ -49,12 +49,20 @@ function Cep() {
     }
     return(
         <>
+        {/* Fazendo o formulario e chamando as funções que eu criei para realizar a pesquisa do cep */}
         <SectionCep>
-           <input type="text" placeholder="Digite seu Nome"></input>
-           <input type="text" placeholder="Digite seu email"></input>
-           <input type="text" placeholder="Digite o numero do local"/>
-           <input type="text" placeholder="Digite o Cep" value={cep} onChange={handleCepChange} />
+            <SectionCepForm>
+                <p>Nome:</p>
+                <input type="text" placeholder="Digite seu Nome"></input>
+                <p>Email:</p>
+                <input type="text" placeholder="Digite seu email"></input>
+                <p>Numero da Casa:</p>
+                <input type="text" placeholder="Digite o numero do local"/>
+                <p>Pesquisar Cep:</p>
+                <input type="text" placeholder="Digite o Cep" value={cep} onChange={handleCepChange} />
+            </SectionCepForm>
             <BotaoCep onClick={pesquisaCEP}>Pesquisar Cep</BotaoCep>
+            {/* Retornado as informações apos pesquisar o cep */}
             {
                 error && <p>{error}</p>
             }
